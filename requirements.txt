@@ -1,0 +1,6 @@
+pynput
+opencv-python
+tensorflow
+mediapipe
+numpy
+pyautogui
