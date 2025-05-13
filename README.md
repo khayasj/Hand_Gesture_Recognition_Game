@@ -1,38 +1,82 @@
-This project implements a Hand Gesture Recognition (HGR) system using MediaPipe for hand tracking, OpenCV for real-time video processing, and a Feedforward Neural Network (FNN) for gesture classification. 
-The system recognizes hand gestures in real-time and can be used for applications like gaming control, virtual reality, or assistive technology.
+# Hand Gesture Recognition System
 
-Technologies Used
-MediaPipe: For hand tracking and landmark detection.
-OpenCV: For video capture, image processing, and visualization.
-TensorFlow/Keras: For building and training the FNN model.
-Python: The programming language used for the project.
+This project implements a **real-time Hand Gesture Recognition (HGR)** system using:
 
-Installation
-Prerequisites
-Python 3.7 or higher.(If you are using different python version, 3.8-3.10 is recommended not to have confusion with mediapipe.)
-A webcam for real-time gesture recognition.
+- **MediaPipe** for hand tracking  
+- **OpenCV** for webcam and image processing  
+- **Feedforward Neural Network (FNN)** (via TensorFlow/Keras) for gesture classification  
 
-Note
-Note: Please check the `requirements.txt` file to install all the necessary libraries.
-Use the following command:
-
-```
-pip install -r requirements.txt
-```
-Also make sure you have a webcam and no other app is using at the moment then run controller.py, (python controller.py,click play button or ctrl f5). 
-
-How It Works
-Hand Tracking: MediaPipe detects hand landmarks from the webcam feed.
-Feature Extraction: The landmarks are preprocessed and fed into the FNN model.
-Gesture Classification: The FNN model predicts the gesture based on the input features.
-Output: The recognized gesture is displayed on the screen.
-
-Customization
-Train Your Own Model: Use the train_model.py script to train a new FNN model on your dataset.
-Add New Gestures: Update the label encoder and retrain the model to recognize additional gestures.
-
-How to Run?
-On your terminal run - `python controller.py` command
+It can be used in applications like **gesture-based gaming**, **virtual interfaces**, or **assistive technology for accessibility**.
 
 ---
-**Author:** Shin Than Thar Aung
+
+## Technologies Used
+
+- **MediaPipe** – Hand landmark detection and tracking  
+- **OpenCV** – Webcam access, image capture, and overlay visualization  
+- **TensorFlow/Keras** – Building and training the gesture classification model  
+- **Python** – Programming language (recommended version 3.7 to 3.10)
+
+---
+
+## Installation
+
+### Prerequisites
+
+- Python 3.7 or higher  
+  > *(Versions 3.8 to 3.10 are safest for MediaPipe compatibility)*  
+- A working **webcam** (make sure no other app is using it)  
+- All required libraries listed in `requirements.txt`
+
+### Setup
+
+```bash
+pip install -r requirements.txt
+```
+
+> If you run into errors related to MediaPipe or TensorFlow, double-check your Python version.
+
+---
+
+## How It Works
+
+1. **Hand Tracking**  
+   MediaPipe detects 21 hand landmarks in real-time from your webcam feed.
+
+2. **Feature Extraction**  
+   These landmarks are preprocessed into a numerical vector.
+
+3. **Gesture Classification**  
+   A trained FNN model predicts the gesture class based on extracted features.
+
+4. **Output Display**  
+   The recognized gesture is visualized in a live video overlay.
+
+---
+
+## How to Run
+
+Make sure your webcam is connected and not used by any other app. Then:
+
+```bash
+python controller.py
+```
+
+You can also:
+- Click the **"Run" (▶️)** button in your IDE, or  
+- Press **Ctrl + F5** (in editors like VS Code)
+
+---
+
+## Customization
+
+- **Train Your Own Model**  
+  Use `train_model.py` to train a custom FNN on your own hand gesture dataset.
+
+- **Add New Gestures**  
+  Update your label encoder, expand the dataset, and retrain the model to recognize more gestures.
+
+---
+## Author
+
+**Shin Than Thar Aung**
